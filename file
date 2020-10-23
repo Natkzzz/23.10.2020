@@ -1,0 +1,15 @@
+from random import randint
+name = 'your name'
+with open('Имя.txt', 'w') as file:
+    file.write(name + '\n')
+    for line in [str(randint(1,100)) for _ in range(1000)]:
+        file.write(line + '\n')
+fifty_eight = []
+with open('Имя.txt') as file:
+    for line in file:
+        if line != name + '\n':
+            if int(line) == 58:
+                fifty_eight.append(58)
+with open('fifty eight.txt', 'w') as file:
+    for number in fifty_eight:
+        file.write('58\n')
