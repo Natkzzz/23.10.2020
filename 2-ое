@@ -1,0 +1,12 @@
+from random import random
+c= [int(random()*1000)for i in range(1000)]
+print(c)
+c_sweet=set(c)
+musy=None
+kiss=0
+for item in c_sweet:
+    qty=c.count(item)
+    if qty > kiss:
+        kiss=qty
+        musy=item
+print(musy)
