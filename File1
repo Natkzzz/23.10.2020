@@ -1,0 +1,28 @@
+lines = []
+with open('Имя.txt') as file:
+  for line in file.readlines():
+  	lines.append(line)
+
+lines.pop(0)
+
+dictionary = {}
+
+with open('Имя.txt') as file:
+	key = None
+	value = None
+	now = 1
+	for i in range(len(lines)):
+		if now == 3:
+			key = lines[i].replace('\n', '')
+		elif now == 4:
+			value = int(lines[i].replace('\n', ''))
+
+		if key != None and value != None:
+			dictionary[key] = value
+
+		if now == 4:
+			now = 1
+		else:
+			now += 1
+
+print(dictionary)
